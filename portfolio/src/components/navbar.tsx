@@ -1,6 +1,6 @@
-'use client'; // Indique que ce composant doit être rendu côté client
+'use client'; 
 
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 function Navbar() {
@@ -15,7 +15,6 @@ function Navbar() {
         setIsOpen(!isOpen);
     };
 
-    // Variantes d'animation pour le conteneur de la navbar
     const navContainerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -28,7 +27,6 @@ function Navbar() {
         }
     };
 
-    // Variantes d'animation pour chaque élément
     const navItemVariants = {
         hidden: { y: -20, opacity: 0 },
         visible: {
@@ -42,7 +40,6 @@ function Navbar() {
         }
     };
 
-    // Animation pour le bouton CV
     const cvButtonVariants = {
         hidden: { scale: 0.8, opacity: 0 },
         visible: {
@@ -57,44 +54,16 @@ function Navbar() {
         }
     };
 
-    // Animation pour le menu mobile
-    const mobileMenuVariants = {
-        hidden: { 
-            x: "100%", 
-            opacity: 0 
-        },
-        visible: { 
-            x: 0, 
-            opacity: 1,
-            transition: {
-                type: "spring",
-                stiffness: 80,
-                damping: 12,
-                when: "beforeChildren",
-                staggerChildren: 0.1
-            }
-        },
-        exit: {
-            x: "100%",
-            opacity: 0,
-            transition: {
-                type: "tween",
-                ease: "easeInOut",
-                duration: 0.3
-            }
-        }
-    };
-
     return (
         <div>
-            {/* Menu Desktop */}
             <motion.div 
-                className="hidden md:block h-full bg-[#0a1930] w-full md:h-[100px] md:pr-[60px] p-5 lg:text-xl text-sm absolute right-0 pt-5"
+                className={`md:block ${isOpen ? 'block' : 'hidden'} h-full bg-[#112240] md:bg-[#0a1930] w-[60%] max-w-full md:w-full md:h-[100px] md:pr-[60px] p-5 lg:text-xl text-sm absolute -right-20 md:right-0 pt-[65px] md:pt-5`}
+                id="navbar"
                 initial="hidden"
                 animate="visible"
                 variants={navContainerVariants}
             >
-                <ul className="text-white flex flex-row space-x-8 justify-end items-center h-[100px]">
+                <ul className="text-white flex flex-col space-y-10 md:space-y-0 md:flex-row md:space-x-8 md:justify-end items-center h-[100px]">
                     {element.map((item, index) => (
                         <motion.li 
                             key={index} 
@@ -121,7 +90,7 @@ function Navbar() {
                             <button 
                                 type="button" 
                                 onClick={openResume} 
-                                className="rounded-sm w-auto bg-[#0a1930] border border-[#63edd1] p-2 pl-7 pr-7 md:p-4 lg:p-3 lg:pr-4 lg:pl-4 text-[#63edd1] flex flex-row items-center hover:cursor-pointer"
+                                className="rounded-sm w-auto bg-[#112240] md:bg-[#0a1930] border border-[#63edd1] p-2 pl-7 pr-7 md:p-4 lg:p-3 lg:pr-4 lg:pl-4 text-[#63edd1] flex flex-row items-center hover:cursor-pointer"
                             >
                                 Cv <img src="/images/download.png" alt="Download CV" className="h-7 w-7 ml-4" />
                             </button>
@@ -130,67 +99,16 @@ function Navbar() {
                 </ul>
             </motion.div>
 
-            {/* Menu Mobile */}
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div 
-                        className="md:hidden block h-full bg-[#112240] w-[60%] max-w-full absolute -right-20 pt-[65px] p-5 text-sm z-10"
-                        initial="hidden"
-                        animate="visible"
-                        exit="exit"
-                        variants={mobileMenuVariants}
-                    >
-                        <ul className="text-white flex flex-col space-y-10 items-center">
-                            {element.map((item, index) => (
-                                <motion.li 
-                                    key={index} 
-                                    className="hover:text-[#63edd1] cursor-pointer flex flex-col items-center"
-                                    variants={navItemVariants}
-                                    whileHover={{ scale: 1.05 }}
-                                >
-                                    <span className="text-[#63edd1] justify-center text-center">0{index + 1}.</span>
-                                    <span className="pt-2">{item}</span>
-                                </motion.li>
-                            ))}
-
-                            <motion.div 
-                                className="h-auto w-auto bg-[#63edd1] rounded-sm mt-10"
-                                variants={cvButtonVariants}
-                            >
-                                <motion.div 
-                                    whileHover={{ y: -5, x: -5 }}
-                                    transition={{ type: "spring", stiffness: 300 }}
-                                >
-                                    <button 
-                                        type="button" 
-                                        onClick={openResume} 
-                                        className="rounded-sm w-auto bg-[#112240] border border-[#63edd1] p-2 pl-7 pr-7 text-[#63edd1] flex flex-row items-center hover:cursor-pointer"
-                                    >
-                                        Cv <img src="/images/download.png" alt="Download CV" className="h-7 w-7 ml-4" />
-                                    </button>
-                                </motion.div>
-                            </motion.div>
-                        </ul>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-
-            {/* Bouton Menu Mobile */}
             <motion.div 
-                className="md:hidden block w-10 h-10 absolute top-7 right-7 z-20"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                className="md:hidden block w-10 h-10 absolute top-7 right-7"
+                initial={{ opacity: 0, rotate: -180 }}
+                animate={{ opacity: 1, rotate: 0 }}
                 transition={{ duration: 0.5 }}
                 whileTap={{ scale: 0.9 }}
             >
-                <motion.button 
-                    id="sidebar-open" 
-                    onClick={openNavMobile}
-                    animate={{ rotate: isOpen ? 90 : 0 }}
-                    transition={{ duration: 0.3 }}
-                >
+                <button id="sidebar-open" onClick={openNavMobile}>
                     <img src="/images/menu.png" alt="Menu" />
-                </motion.button>
+                </button>
             </motion.div>
         </div>
     );
