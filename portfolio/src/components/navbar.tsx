@@ -98,7 +98,7 @@ function Navbar() {
     return (
         <div className="overflow-x-hidden ">
             <motion.div 
-                className="hidden fixed md:block  bg-[#0a1930]/[0.9] w-full   md:pr-[60px] p-5 lg:text-xl text-sm absolute right-0 pt-5"
+                className="hidden fixed md:block  bg-[#0a1930]/[0.8] w-full   md:pr-[60px] p-5 lg:text-xl text-sm z-40 right-0 pt-5"
                 initial="hidden"
                 animate="visible"
                 variants={navContainerVariants}
@@ -184,7 +184,7 @@ function Navbar() {
             </AnimatePresence>
 
             <motion.div 
-                className="md:hidden block w-10 h-10 absolute top-7 right-7 z-20 fixed"
+                className="md:hidden block w-10 h-10 top-7 right-7 z-20 fixed"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}

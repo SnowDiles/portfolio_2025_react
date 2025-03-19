@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '@/components/navbar';
 import Presentation from '@/components/presentation';
 import About from '@/components/about'
+import Projects from '@/components/projects';
 
 const PortfolioPage: React.FC = () => {
   return (
@@ -12,6 +13,8 @@ const PortfolioPage: React.FC = () => {
       <div>
         <Presentation />
         <About/>
+        <Projects/>
+
       </div>
     </div>
   );
