@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/EpitechWebAcademiePromo2026/W-WEB-090-LIL-1-1-Portfolio-brahim.boulahia/issues"
   },
-  "homepage": "https://github.com/EpitechWebAcademiePromo2026/W-WEB-090-LIL-1-1-Portfolio-brahim.boulahia#readme"
+  "homepage": "https://github.com/EpitechWebAcademiePromo2026/W-WEB-090-LIL-1-1-Portfolio-brahim.boulahia#readme",
+  "dependencies": {
+    "react-scrollbars-custom": "^4.1.1"
+  }
 }

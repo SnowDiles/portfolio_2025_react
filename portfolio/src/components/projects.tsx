@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { motion } from "framer-motion";
+import { Scrollbar } from 'react-scrollbars-custom';
 
 interface Repo {
   id: number;
@@ -47,6 +48,8 @@ const Projects = ({ username = 'SnowDiles' }: { username?: string }) => {
 
   const renderRepoCard = (repo: Repo) => {
     return (
+
+      
       <div
         key={repo.id}
         className="bg-[#112240] p-6 rounded-lg hover:transform hover:-translate-y-2 transition-all duration-300 hover:cursor-pointer"
