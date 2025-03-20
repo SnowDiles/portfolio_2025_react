@@ -5,6 +5,7 @@ import About from '@/components/about'
 import Projects from '@/components/projects';
 import ListIcon from '@/components/listicon';
 import AnimatedCursor from "react-animated-cursor"
+import ContactPage from '@/components/contact';
 
 const PortfolioPage: React.FC = () => {
   return (
@@ -45,6 +46,7 @@ const PortfolioPage: React.FC = () => {
         <About />
         <Projects />
         <ListIcon />
+        <ContactPage />
       </div>
     </div>
   );

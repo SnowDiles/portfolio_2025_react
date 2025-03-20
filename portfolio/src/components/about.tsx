@@ -71,10 +71,10 @@ const About = () => {
             </div>
           </div>
 
-            <div className='hover:cursor-pointer'>
+            <div className='hover:cursor-pointer transition-all '>
               <div className="relative w-full max-w-xs mx-auto border-2 border-[#63edd1] rounded-lg group ">
                 <div className="absolute inset-0 bg-[#63edd1] opacity-40 group-hover:opacity-0 transition-opacity duration-300"></div>
-                <img src="images/face.jpg" className="rounded-lg" alt="visage humain" />
+                <img  src="images/face.jpg" className="rounded-lg " alt="visage humain" />
               </div>
             </div>
 

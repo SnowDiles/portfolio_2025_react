@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/EpitechWebAcademiePromo2026/W-WEB-090-LIL-1-1-Portfolio-brahim.boulahia#readme",
   "dependencies": {
+    "react-animated-cursor": "^2.11.2",
     "react-scrollbars-custom": "^4.1.1"
   }
 }
