@@ -47,8 +47,6 @@ const Projects = ({ username = 'SnowDiles' }: { username?: string }) => {
 
   const renderRepoCard = (repo: Repo) => {
     return (
-
-      
       <div
         key={repo.id}
         className="bg-[#112240] p-6 rounded-lg hover:transform hover:-translate-y-2 transition-all duration-300 hover:cursor-pointer"
@@ -138,7 +136,7 @@ const Projects = ({ username = 'SnowDiles' }: { username?: string }) => {
   }
 
   return (
-    <div className="bg-[#0a1930] text-white p-8">
+    <div className="bg-[#0a1930] text-white p-8 pt-50">
       <div className="max-w-4xl mx-auto">
         <h2 className="mb-8">
           <span className="text-[#63edd1] font-mono">02. </span>

@@ -19,7 +19,7 @@ const EmailButton: React.FC<EmailButtonProps> = ({ email, subject, body }) => {
         <motion.div className="h-auto w-auto bg-[#63edd1] rounded-sm mt-14">
             <motion.div whileHover={{ y: -5, x: -5 }} transition={{ type: "spring", stiffness: 300 }}>
                 <button onClick={handleOpenMail} className="rounded-sm w-auto bg-[#0a1930] border border-[#63edd1] p-3 pl-7 pr-7 md:p-4 md:pr-4 md:pl-4 text-[#63edd1] flex flex-row items-center hover:cursor-pointer">
-                    Retrouvez mon Git-hub <img src="/images/redirect.png" alt="redirect github" className="h-7 w-7 ml-4" />
+                    M'envoyer un mail <img src="/images/mail.png" alt="redirect email" className="h-7 w-7 ml-4" />
                 </button>
             </motion.div>
         </motion.div>

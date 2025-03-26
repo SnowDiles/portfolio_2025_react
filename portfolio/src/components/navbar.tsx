@@ -118,7 +118,7 @@ function Navbar() {
                                 href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
                                 onClick={(e) => {
                                     e.preventDefault(); 
-                                    const scrollPositions = [950, 2300, 1000]; 
+                                    const scrollPositions = [950, 2050, 4000]; 
                                     window.scrollTo({ top: scrollPositions[index] || 0, behavior: 'smooth' });
                                 }}
                             >
