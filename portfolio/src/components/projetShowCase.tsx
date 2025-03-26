@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 
-// Define the prop types interface
 interface ProjectShowcaseProps {
   title?: string;
   description?: string;
@@ -20,19 +19,24 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
   imageUrl = '/halcyon-screenshot.png',
   skills = [],
   gitHubLink = "/portfolio"
-
 }) => {
   return (
-    <div className="w-full flex justify-center px-0 bg-[#0a1930]">
+    <div className="w-full flex justify-center px-4 py-8 bg-[#0a1930]">
       <div className={`
         flex flex-col md:flex-row items-center justify-between 
         ${direction === 'right' ? 'md:flex-row-reverse' : 'md:flex-row'}
-        bg-gray-900 text-white p-4 md:p-8 
-        w-full max-w-[70%]
+        bg-gradient-to-br from-gray-900 to-[#0a2342] 
+        text-white 
+        p-4 md:p-8 
+        w-full max-w-[90%] md:max-w-[70%]
+        rounded-2xl 
+        shadow-2xl
+        border border-gray-800
+        transition-all duration-300
+        hover:scale-[1.02]
       `}>
-
         <div className="w-full md:w-1/2 p-2 md:p-4 mb-4 md:mb-0">
-          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-xl">
+          <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
             <Image 
               src={imageUrl} 
               alt={`${title} project screenshot`}
@@ -44,40 +48,50 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
           </div>
         </div>
 
-        {/* Project Details */}
-        <div className="w-full md:w-1/2 p-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-teal-300 mb-4">{title}</h2>
-          <p className="text-gray-300 mb-6 text-sm md:text-base">{description}</p>
+        <div className="w-full md:w-1/2 p-4 space-y-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-teal-300 mb-4 leading-tight">
+            {title}
+          </h2>
+          <p className="text-gray-300 mb-6 text-sm md:text-base leading-relaxed">
+            {description}
+          </p>
           
-          {/* Platforms */}
-          <div className="flex flex-wrap gap-2 mb-6">
-            {platforms.map((platform) => (
-              <span 
-                key={platform}
-                className="
-                  bg-teal-800 text-teal-200 
-                  px-2 py-1 md:px-3 md:py-1 rounded-full 
-                  text-xs md:text-sm font-medium
-                "
-              >
-                {platform}
-              </span>
-            ))}
-          </div>
+          {platforms.length > 0 && (
+            <div className="flex flex-wrap gap-2 mb-6">
+              {platforms.map((platform) => (
+                <span 
+                  key={platform}
+                  className="
+                    bg-teal-900/50 text-teal-200 
+                    px-2 py-1 md:px-3 md:py-1 rounded-full 
+                    text-xs md:text-sm font-medium
+                    border border-teal-700/30
+                    transition duration-300
+                    hover:bg-teal-800
+                  "
+                >
+                  {platform}
+                </span>
+              ))}
+            </div>
+          )}
 
-          {/* Skills Acquired */}
           {skills.length > 0 && (
             <div className="mb-6">
-              <h3 className="text-lg md:text-xl font-semibold text-teal-300 mb-3">Compétences Acquises (RNCP)</h3>
+              <h3 className="text-lg md:text-xl font-semibold text-teal-300 mb-3">
+                Compétences Acquises (RNCP)
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill, index) => (
                   <span 
                     key={index}
                     className="
-                      bg-gray-700 text-gray-200
+                      bg-gray-700/50 text-gray-200
                       px-2 py-1 md:px-3 md:py-1 rounded-full 
                       text-xs md:text-sm font-medium
-                      hover:bg-teal-800 transition duration-300
+                      border border-gray-600/30
+                      transition duration-300
+                      hover:bg-teal-800
                     "
                   >
                     {skill}
@@ -90,6 +104,8 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
           <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
             <a 
               href={`${gitHubLink}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="
                 flex items-center justify-center
                 bg-teal-600 hover:bg-teal-700 
@@ -97,6 +113,9 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
                 px-4 py-2 
                 rounded-md 
                 transition duration-300
+                transform hover:-translate-y-1
+                shadow-md hover:shadow-lg
+                focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50
               "
             >
               <svg 

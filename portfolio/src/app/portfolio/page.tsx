@@ -11,8 +11,6 @@ import Image from 'next/image';
 
 const PortfolioPage: React.FC = () => {
   return (
-
-
     <div className='bg-[#0a1930]  h-screen' style={{ fontFamily: "'Roboto Mono', monospace" }}>
       <Navbar />
       <div>
@@ -58,7 +56,7 @@ const PortfolioPage: React.FC = () => {
             "Implémenter des règles d’authentification",
             "Rédiger une documentation technique "
           ]}
-          gitHubLink="https://chat.deepseek.com/a/chat/s/b294c275-5350-48ae-ad71-e9973fb1cb22"
+          gitHubLink="https://github.com/SnowDiles/twitter_clone_php"
         />
 
         <ProjectShowcase
@@ -75,6 +73,7 @@ const PortfolioPage: React.FC = () => {
             "Rédiger une présentation",
             "Intégrer les différents éléments"
           ]}
+          gitHubLink="https://github.com/SnowDiles/spotify-clone-react"
         />
 
         <ProjectShowcase
@@ -90,6 +89,7 @@ const PortfolioPage: React.FC = () => {
             "Implémenter la logique et la base de données"
            
           ]}
+          gitHubLink="https://github.com/SnowDiles/Meetic-clone-dating-app-php"
         />
         <Projects />
         <ListIcon />
