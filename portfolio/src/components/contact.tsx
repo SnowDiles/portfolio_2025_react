@@ -2,7 +2,7 @@ import React from 'react';
 
 const ContactPage = () => {
     return (
-        <div className='w-full bg-[#0a1930] pt-50 pb-50'>
+        <div className='w-full bg-[#0a1930] pt-50 pb-55'>
             <div className="md:w-full w-[80%] max-w-2xl mx-auto p-6 bg-gray-800 rounded-lg shadow-xl border border-teal-900">
                 <h2 className="text-2xl font-bold text-teal-300 mb-6 text-center">Contactez-moi</h2>
 

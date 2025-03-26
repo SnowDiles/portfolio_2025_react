@@ -44,53 +44,57 @@ const PortfolioPage: React.FC = () => {
         />
         <Presentation />
         <About />
-        <ProjectShowcase
-          title="My twitter"
-          description="Un projet permettant de reproduire les fonctionnalités principales de Twitter."
-          platforms={['PHP', 'Tailwind', 'Sql', 'JavaScript']}
-          direction="right"
-          imageUrl="/images/twitter.png"
-          skills={[
-            "Rédiger un Cahier Des Charges",
-            "Déployer un environnement de travail",
-            "Implémenter des règles d’authentification",
-            "Rédiger une documentation technique "
-          ]}
-          gitHubLink="https://github.com/SnowDiles/twitter_clone_php"
-        />
+        <div>
+         
+          <ProjectShowcase
+            title="My twitter"
+            description="Un projet permettant de reproduire les fonctionnalités principales de Twitter."
+            platforms={['PHP', 'Tailwind', 'Sql', 'JavaScript']}
+            direction="right"
+            imageUrl="/images/twitter.png"
+            skills={[
+              "Rédiger un Cahier Des Charges",
+              "Déployer un environnement de travail",
+              "Implémenter des règles d’authentification",
+              "Rédiger une documentation technique "
+            ]}
+            gitHubLink="https://github.com/SnowDiles/twitter_clone_php"
+          />
 
-        <ProjectShowcase
-          title="My spotify"
-          description="Une application permettant de reproduire les principales fonctionnalité de spotify."
-          platforms={['React', 'Docker', 'Api', 'Tailwind', 'Librairie React']}
-          direction="left"
-          imageUrl="/images/spotify.png"
-          skills={[
-            "Identifier des améliorations qualitatives et de performance",
-            "Rédiger des spécifications techniques",
-            "Réaliser une maquette ",
-            "Implémenter la partie “front-end”",
-            "Rédiger une présentation",
-            "Intégrer les différents éléments"
-          ]}
-          gitHubLink="https://github.com/SnowDiles/spotify-clone-react"
-        />
 
-        <ProjectShowcase
-          title="My Meetic"
-          description="Une application permettant de reproduire les fonctionnalités d'un site de rencontre tel que Meetic."
-          platforms={['Php', 'CSS', 'SQL']}
-          direction="right"
-          imageUrl="/images/meetic.png"
-          skills={[
-            "Intégrer les différents éléments",
-            "Implémenter des règles d’authentification",
-            "Réaliser une maquette ",
-            "Implémenter la logique et la base de données"
-           
-          ]}
-          gitHubLink="https://github.com/SnowDiles/Meetic-clone-dating-app-php"
-        />
+          <ProjectShowcase
+            title="My spotify"
+            description="Une application permettant de reproduire les principales fonctionnalité de spotify."
+            platforms={['React', 'Docker', 'Api', 'Tailwind', 'Librairie React']}
+            direction="left"
+            imageUrl="/images/spotify.png"
+            skills={[
+              "Identifier des améliorations qualitatives et de performance",
+              "Rédiger des spécifications techniques",
+              "Réaliser une maquette ",
+              "Implémenter la partie “front-end”",
+              "Rédiger une présentation",
+              "Intégrer les différents éléments"
+            ]}
+            gitHubLink="https://github.com/SnowDiles/spotify-clone-react"
+          />
+
+          <ProjectShowcase
+            title="My Meetic"
+            description="Une application permettant de reproduire les fonctionnalités d'un site de rencontre tel que Meetic."
+            platforms={['Php', 'CSS', 'SQL']}
+            direction="right"
+            imageUrl="/images/meetic.png"
+            skills={[
+              "Intégrer les différents éléments",
+              "Implémenter des règles d’authentification",
+              "Réaliser une maquette ",
+              "Implémenter la logique et la base de données"
+
+            ]}
+            gitHubLink="https://github.com/SnowDiles/Meetic-clone-dating-app-php"
+          />
+        </div>
         <Projects />
         <ListIcon />
         <ContactPage />

@@ -118,7 +118,7 @@ function Navbar() {
                                 href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
                                 onClick={(e) => {
                                     e.preventDefault(); 
-                                    const scrollPositions = [950, 2050, 4000]; 
+                                    const scrollPositions = [950, 2050, 6200]; 
                                     window.scrollTo({ top: scrollPositions[index] || 0, behavior: 'smooth' });
                                 }}
                             >
@@ -170,9 +170,9 @@ function Navbar() {
                                         href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
                                         onClick={(e) => {
                                             e.preventDefault(); 
-                                            const scrollPositions = [950, 2300, 1000]; 
-                                            window.scrollTo({ top: scrollPositions[index] || 0, behavior: 'smooth' });
-                                            setIsOpen(false); // Close the sidebar
+                                            const scrollPositions = [1150, 2500, 7000]; 
+                                            window.scrollTo({ top: scrollPositions[index] , behavior: 'smooth' });
+                                            setIsOpen(false); 
                                         }}
                                     >
                                         <span className="text-[#63edd1] justify-center text-center">0{index + 1}.</span>
