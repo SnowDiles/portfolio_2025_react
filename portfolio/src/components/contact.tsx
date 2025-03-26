@@ -60,10 +60,10 @@ const ContactPage = () => {
                             id="message"
                             name="message"
                             rows={5}
-                            className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                            className="min-h-[80px] max-h-[500px] w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
                             placeholder="Votre message..."
                             required
-                            maxLength={250}
+                            maxLength={650}
                             minLength={20}
                         ></textarea>
                     </div>
