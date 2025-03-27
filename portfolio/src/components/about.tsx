@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const About = () => {
   return (
-    <div className="bg-[#0a1930] text-white min-h-screen p-8" >
+    <div className="bg-[#0a1930]  text-white min-h-screen p-8" >
       <div className="max-w-4xl mx-auto">
         <h1 className="mb-8">
           <span className="text-[#63edd1] font-mono">01. </span>
