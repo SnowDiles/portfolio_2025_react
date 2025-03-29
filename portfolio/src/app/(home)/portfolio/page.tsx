@@ -7,7 +7,6 @@ import ListIcon from '@/components/listicon';
 import AnimatedCursor from "react-animated-cursor"
 import ContactPage from '@/components/contact';
 import ProjectShowcase from '@/components/projetShowCase'
-import Image from 'next/image';
 
 const PortfolioPage: React.FC = () => {
   return (

@@ -11,7 +11,7 @@ function Presentation() {
                 <h1 className='text-[40px] md:text-[55px] font-bold text-[#8891b0]'>Développeur web en formation.</h1>
                 <h1 className="text-[15px] lg:text-[20px] lg:max-w-[650px] text-[#8891b0] pt-5">
                     Actuellement en formation à Epitech, passionné par la création de solutions digitales efficaces,
-                    je suis à la <span className="text-[#63edd1] inline">recherche d'une alternance</span> pour septembre 2025.
+                    je suis à la <span className="text-[#63edd1] inline">recherche d&apos;une alternance</span> pour septembre 2025.
                 </h1>
                 <motion.div className="h-auto w-auto bg-[#63edd1] rounded-sm mt-14">
                     <motion.div whileHover={{ y: -5, x: -5 }} transition={{ type: "spring", stiffness: 300 }}>

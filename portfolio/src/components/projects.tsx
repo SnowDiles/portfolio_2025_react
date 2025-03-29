@@ -35,11 +35,13 @@ const Projects = ({ username = 'SnowDiles' }: { username?: string }) => {
           .slice(0, 6);
 
         setRepos(filteredRepos);
-      } catch (err: any) {
-        setError(err.message || 'Une erreur inconnue est survenue');
+      } catch (err) {
+        const errorMessage = err instanceof Error ? err.message : 'Une erreur inconnue est survenue';
+        setError(errorMessage);
       } finally {
         setLoading(false);
       }
+      
     };
 
     fetchRepos();

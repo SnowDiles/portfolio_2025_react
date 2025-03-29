@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
-    let element = ["A propos", "Projets", "Contact"];
+    const element = ["A propos", "Projets", "Contact"];
 
     const openResume = () => {
         window.open('/resume.pdf', '_blank');
