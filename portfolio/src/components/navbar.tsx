@@ -118,8 +118,8 @@ function Navbar() {
                                 href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
                                 onClick={(e) => {
                                     e.preventDefault(); 
-                                    const scrollPositions = [875, 1700, 6200]; 
-                                    window.scrollTo({ top: scrollPositions[index] || 0, behavior: 'instant' });
+                                    const scrollPositions = [875, 1700, 6100]; 
+                                    window.scrollTo({ top: scrollPositions[index] || 0, behavior: 'smooth' });
                                 }}
                             >
                                 <span className="text-[#63edd1] md:mr-2 justify-center text-center">0{index + 1}.</span>
