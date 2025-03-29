@@ -1,12 +1,46 @@
-import React from 'react';
+"use client";
+
+import { useState } from "react";
 
 const ContactPage = () => {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+    });
+
+    const [status, setStatus] = useState("");
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus("Envoi en cours...");
+
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
+
+            const result = await response.json();
+            setStatus(result.message);
+        } catch (error) {
+            console.error(error);
+            setStatus("Erreur lors de l'envoi.");
+        }
+    };
+
     return (
-        <div className='w-full bg-[#0a1930] pt-50 pb-55'>
+        <div className="w-full bg-[#0a1930] pt-50 pb-55">
             <div className="md:w-full w-[80%] max-w-2xl mx-auto p-6 bg-gray-800 rounded-lg shadow-xl border border-teal-900">
                 <h2 className="text-2xl font-bold text-teal-300 mb-6 text-center">Contactez-moi</h2>
 
-                <form className="space-y-6" method='POST'>
+                <form className="space-y-6" onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
                             Nom
@@ -19,6 +53,7 @@ const ContactPage = () => {
                             placeholder="Votre nom"
                             maxLength={20}
                             required
+                            onChange={handleChange}
                         />
                     </div>
 
@@ -34,6 +69,7 @@ const ContactPage = () => {
                             placeholder="votre@email.com"
                             required
                             maxLength={45}
+                            onChange={handleChange}
                         />
                     </div>
 
@@ -49,6 +85,7 @@ const ContactPage = () => {
                             placeholder="Objet de votre message"
                             required
                             maxLength={50}
+                            onChange={handleChange}
                         />
                     </div>
 
@@ -65,6 +102,7 @@ const ContactPage = () => {
                             required
                             maxLength={650}
                             minLength={20}
+                            onChange={handleChange}
                         ></textarea>
                     </div>
 
@@ -86,10 +124,10 @@ const ContactPage = () => {
                         </button>
                     </div>
                 </form>
+
+                {status && <p className="text-center mt-4 text-teal-400">{status}</p>}
             </div>
-
         </div>
-
     );
 };
 
