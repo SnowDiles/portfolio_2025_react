@@ -13,37 +13,26 @@ const PortfolioPage: React.FC = () => {
     <div className='bg-[#0a1930]  h-screen' style={{ fontFamily: "'Roboto Mono', monospace" }}>
       <Navbar />
       <div>
-        <AnimatedCursor
-          innerSize={12}
-          outerSize={35}
-          color="152, 211, 219"
-          outerAlpha={0.3}
-          innerScale={0.8}
-          outerScale={2}
-          clickables={[
-            'a',
-            'input[type="text"]',
-            'input[type="email"]',
-            'input[type="number"]',
-            'input[type="submit"]',
-            'input[type="image"]',
-            'label[for]',
-            'select',
-            'textarea',
-            'button',
-            '.link'
-          ]}
-          trailingSpeed={7}
-          outerStyle={{
-            border: `2px solid rgba(152, 211, 219)`,
-          }}
-          innerStyle={{
-            backgroundColor: `rgba(152, 211, 219)`,
-          }}
-        />
         <Presentation />
         <About />
         <div>
+
+
+
+        <ProjectShowcase
+            title="EpiBros"
+            description="Un projet que nous avons réalisé lors du hackaton Epitech 2025"
+            platforms={['Phaser', 'next', 'Javascript']}
+            direction="left"
+            imageUrl="/images/epiGusto.png"
+            skills={[
+              "Développer un jeux en 2d",
+              "Aprendre a gérer les frames la logique de gravité etc...",
+              "Orienté objet poussé",
+              "Rédiger une documentation technique "
+            ]}
+            gitHubLink="https://github.com/SnowDiles/portfolio_2025_react"
+          />
          
           <ProjectShowcase
             title="My twitter"
