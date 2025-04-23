@@ -4,7 +4,6 @@ import Presentation from '@/components/presentation';
 import About from '@/components/about'
 import Projects from '@/components/projects';
 import ListIcon from '@/components/listicon';
-import AnimatedCursor from "react-animated-cursor"
 import ContactPage from '@/components/contact';
 import ProjectShowcase from '@/components/projetShowCase'
 
