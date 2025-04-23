@@ -5,7 +5,6 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { name, email, subject, message } = body;
 
-    // Vérification des champs
     if (!name || !email || !subject || !message) {
         return NextResponse.json(
             { message: 'Tous les champs sont requis' },
@@ -14,6 +13,9 @@ export async function POST(request: Request) {
     }
 
     try {
+
+        
+
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
